@@ -7,8 +7,7 @@ export default function PlantsPage() {
   return (
     <div className="my-plants-container">
       <h1>My Plants</h1>
-      {/* Uhhhhhhh navagation goes here??? */}
-      <NavLink to="addnewplant">
+      <NavLink to="/addnewplant">
         <AddCircleRoundedIcon className="add-plant-button" />
       </NavLink>
     </div>

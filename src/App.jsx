@@ -21,8 +21,8 @@ export default function App() {
           <Route path="plants" element={<PlantsPage />}></Route>
           <Route path="settings" element={<SettingsPage />}></Route>
           <Route path="search" element={<SearchPage />}></Route>
-          <Route path="addnewplant" element={<AddNewPlant />}></Route>
         </Route>
+        <Route path="addnewplant" element={<AddNewPlant />}></Route>
       </Routes>
     </BrowserRouter>
   );
