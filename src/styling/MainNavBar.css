@@ -33,5 +33,5 @@
 }
 
 .selected {
-  color: #ef775a;
+  border: 2px solid red;
 }

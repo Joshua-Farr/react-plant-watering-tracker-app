@@ -42,7 +42,7 @@ export default function PlantsPage() {
         <RemoveCircleRoundedIcon className="delete-button" />
       </div>
 
-      <NavLink to="/addnewplant">
+      <NavLink to="/newplantinfo">
         <AddCircleRoundedIcon className="add-plant-button" />
       </NavLink>
     </div>

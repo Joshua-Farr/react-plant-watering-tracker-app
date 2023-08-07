@@ -2,7 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-/* .background-img-wave {
-} */
+.background-img-wave {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  display: none;
+}

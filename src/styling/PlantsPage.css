@@ -23,6 +23,11 @@
   margin-bottom: 1em;
 }
 
+.plant-container:hover,
+.plant-container:focus {
+  cursor: pointer;
+}
+
 .page-title {
   margin-bottom: 0.5em;
 }

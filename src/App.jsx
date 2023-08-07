@@ -7,6 +7,7 @@ import SearchPage from "./components/Pages/SearchPage";
 import HomePageNav from "./components/Pages/HomePageNav";
 import UpcomingPage from "./components/Pages/UpcomingPage";
 import AddNewPlant from "./components/Pages/AddNewPlant";
+import NewPlantInfoPage from "./components/Pages/NewPlantInfoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
           <Route path="settings" element={<SettingsPage />}></Route>
           <Route path="search" element={<SearchPage />}></Route>
         </Route>
-        <Route path="addnewplant" element={<AddNewPlant />}></Route>
+        <Route path="newplantinfo" element={<NewPlantInfoPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
