@@ -5,11 +5,79 @@
   color: #7da08e;
   cursor: pointer;
   position: absolute;
-  bottom: 90px;
-  right: 45px;
+  bottom: 85px;
+  right: 30px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .my-plants-container {
   margin: 2em;
+}
+
+.plant-container {
+  display: flex;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 1em;
+  border-radius: 9px;
+  margin-bottom: 1em;
+}
+
+.page-title {
+  margin-bottom: 0.5em;
+}
+
+.plant-container img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  margin-right: 1em;
+}
+
+.delete-button {
+  align-self: center;
+  margin-left: auto;
+  width: 30px !important;
+  height: 30px !important;
+  color: #969696;
+}
+
+.delete-button:hover,
+.delete-button:focus {
+  color: #ef775a;
+  cursor: pointer;
+}
+
+.my-plant-name {
+  font-size: 1em;
+}
+
+.my-plant-location {
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.last-watered-date {
+  width: 100px;
+  font-size: 0.5rem;
+  border-radius: 25px;
+  background-color: #1e3050;
+  color: white;
+  padding: 3px;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-plant-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.water-droplet {
+  height: 15px !important;
+  width: 15px !important;
+  margin-right: 5px;
 }
