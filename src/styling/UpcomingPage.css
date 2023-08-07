@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: white;
   color: #5b5b5b;
-  padding: 2em;
+  padding: 1em 2em 1em 2em;
   margin: auto 2em;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -13,11 +13,12 @@
   display: flex;
   align-items: center;
   gap: 3px;
+  margin-top: 0.85em;
 }
 
 .task-bubble {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +28,11 @@
   margin-left: auto;
 }
 
+.task-bubble:hover,
+.task-bubble:focus {
+  cursor: pointer;
+}
+
 .reminder-card {
   display: flex;
   align-items: center;
@@ -34,7 +40,7 @@
 }
 
 .time-left-until-action {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .tasks-remaining {
@@ -45,9 +51,9 @@
 .more-info-reminder {
   text-transform: uppercase;
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 500;
   align-self: center;
-  margin-bottom: -7px;
+  margin-top: 27px;
 }
 
 .reminder-info-location {

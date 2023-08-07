@@ -4,9 +4,10 @@ import HomePage from "./components/Pages/HomePage";
 import PlantsPage from "./components/Pages/PlantsPage";
 import SettingsPage from "./components/Pages/SettingsPage";
 import SearchPage from "./components/Pages/SearchPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePageNav from "./components/Pages/HomePageNav";
 import UpcomingPage from "./components/Pages/UpcomingPage";
+import AddNewPlant from "./components/Pages/AddNewPlant";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="plants" element={<PlantsPage />}></Route>
           <Route path="settings" element={<SettingsPage />}></Route>
           <Route path="search" element={<SearchPage />}></Route>
+          <Route path="addnewplant" element={<AddNewPlant />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

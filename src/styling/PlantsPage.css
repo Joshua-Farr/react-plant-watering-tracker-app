@@ -1,0 +1,15 @@
+.add-plant-button {
+  height: 75px !important;
+  width: 75px !important;
+  border-radius: 50%;
+  color: #7da08e;
+  cursor: pointer;
+  position: absolute;
+  bottom: 90px;
+  right: 45px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-plants-container {
+  margin: 2em;
+}

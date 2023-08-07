@@ -1,5 +1,16 @@
 import React from "react";
+import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
+import { NavLink } from "react-router-dom";
+import "../../styling/PlantsPage.css";
 
 export default function PlantsPage() {
-  return <h1>This is the plants page!</h1>;
+  return (
+    <div className="my-plants-container">
+      <h1>My Plants</h1>
+      {/* Uhhhhhhh navagation goes here??? */}
+      <NavLink to="addnewplant">
+        <AddCircleRoundedIcon className="add-plant-button" />
+      </NavLink>
+    </div>
+  );
 }
