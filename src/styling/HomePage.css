@@ -1,0 +1,62 @@
+.reminder-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #5b5b5b;
+  padding: 1em;
+  padding-left: 2em;
+  margin: auto 2em;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-info-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+.reminder-info-text > h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  background-color: #7da08e;
+}
+
+.nav-link-homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link-main {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  padding: 3px 14px;
+
+  margin-block: 2em;
+}
+
+.is-selected {
+  padding: 3px 14px;
+  border-radius: 75px;
+  background-color: #e3ece7;
+}
+
+.nav-link-main:hover,
+.nav-link-main:focus {
+  border-radius: 75px;
+  background-color: #e3ece7;
+}

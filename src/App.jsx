@@ -5,13 +5,18 @@ import PlantsPage from "./components/Pages/PlantsPage";
 import SettingsPage from "./components/Pages/SettingsPage";
 import SearchPage from "./components/Pages/SearchPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePageNav from "./components/Pages/HomePageNav";
+import UpcomingPage from "./components/Pages/UpcomingPage";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />}></Route>
+          <Route path="home-nav" element={<HomePageNav />}>
+            <Route index element={<HomePage />}></Route>
+            <Route path="upcoming" element={<UpcomingPage />}></Route>
+          </Route>
           <Route path="plants" element={<PlantsPage />}></Route>
           <Route path="settings" element={<SettingsPage />}></Route>
           <Route path="search" element={<SearchPage />}></Route>

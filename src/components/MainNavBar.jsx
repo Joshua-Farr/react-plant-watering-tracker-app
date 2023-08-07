@@ -11,25 +11,45 @@ import "../styling/MainNavBar.css";
 export default function MainNavBar() {
   return (
     <div className="menu-bar-wrapper">
-      <NavLink to="." className="nav-bar-link">
+      <NavLink
+        to="home-nav"
+        className={({ isActive }) =>
+          isActive ? "nav-bar-link selected" : "nav-bar-link"
+        }
+      >
         <div className="menu-item">
           <HomeIcon />
           <h4>Home</h4>
         </div>
       </NavLink>
-      <NavLink to="plants" className="nav-bar-link">
+      <NavLink
+        to="plants"
+        className={({ isActive }) =>
+          isActive ? "nav-bar-link selected" : "nav-bar-link"
+        }
+      >
         <div className="menu-item">
           <SpaRoundedIcon />
           <h4>My Plants</h4>
         </div>
       </NavLink>
-      <NavLink to="search" className="nav-bar-link">
+      <NavLink
+        to="search"
+        className={({ isActive }) =>
+          isActive ? "nav-bar-link selected" : "nav-bar-link"
+        }
+      >
         <div className="menu-item">
           <SearchRoundedIcon />
           <h4>Search</h4>
         </div>
       </NavLink>
-      <NavLink to="settings" className="nav-bar-link">
+      <NavLink
+        to="settings"
+        className={({ isActive }) =>
+          isActive ? "nav-bar-link selected" : "nav-bar-link"
+        }
+      >
         <div className="menu-item">
           <SettingsRoundedIcon />
           <h4>Settings</h4>
