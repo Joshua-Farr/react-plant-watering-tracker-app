@@ -1,0 +1,89 @@
+.add-new-plant-form {
+  display: inline;
+  border: 1px solid #b9b9b98f;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cancel-button,
+.submit-button {
+  border-radius: 25px;
+  padding: 5px 35px;
+  border: 2px solid transparent;
+}
+
+.cancel-button:hover,
+.submit-button:hover,
+.cancel-button:focus,
+.submit-button:focus {
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #7da08e;
+  color: white;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.cancel-button {
+  background-color: white;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  border: 2px solid gray;
+}
+
+.plant-form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 90px;
+}
+
+.my-plants-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-plants-container > h1 {
+  text-align: center;
+  line-height: 1.125;
+  margin-bottom: 1em;
+}
+
+input,
+select {
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+select,
+.plant-form-date {
+  border: none;
+  background-color: #dddddd;
+  padding: 8px;
+  border-radius: 9px;
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+.plant-name-input {
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b9b9b9;
+  background-color: transparent;
+}
+
+.plant-form-img {
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); */
+}
