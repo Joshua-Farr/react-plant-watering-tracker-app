@@ -10,21 +10,34 @@ import AddNewPlant from "./components/Pages/AddNewPlant";
 import NewPlantInfoPage from "./components/Pages/NewPlantInfoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+const PlantContext = React.createContext();
+
 export default function App() {
+  const [plants, setPlants] = React.useState([]);
+
+  function addPlant(newPlant) {
+    setPlants((thePlants) => [...thePlants, newPlant]);
+    console.log(`Adding ${newPlant.name} to the plants data!`);
+  }
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route path="home-nav" element={<HomePageNav />}>
-            <Route index element={<HomePage />}></Route>
-            <Route path="upcoming" element={<UpcomingPage />}></Route>
+    <PlantContext.Provider value={{ plants, addPlant }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="home-nav" element={<HomePageNav />}>
+              <Route index element={<HomePage />}></Route>
+              <Route path="upcoming" element={<UpcomingPage />}></Route>
+            </Route>
+            <Route path="plants" element={<PlantsPage />}></Route>
+            <Route path="settings" element={<SettingsPage />}></Route>
+            <Route path="search" element={<SearchPage />}></Route>
           </Route>
-          <Route path="plants" element={<PlantsPage />}></Route>
-          <Route path="settings" element={<SettingsPage />}></Route>
-          <Route path="search" element={<SearchPage />}></Route>
-        </Route>
-        <Route path="newplantinfo" element={<NewPlantInfoPage />}></Route>
-      </Routes>
-    </BrowserRouter>
+          <Route path="newplantinfo" element={<NewPlantInfoPage />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </PlantContext.Provider>
   );
 }
+
+export { PlantContext };

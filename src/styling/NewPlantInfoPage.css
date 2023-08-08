@@ -1,9 +1,9 @@
 .add-new-plant-form {
   display: inline;
-  border: 1px solid #b9b9b98f;
-  padding: 1.5em;
+  /* border: 1px solid #b9b9b98f; */
+  /* padding: 1.5em; */
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); */
 }
 
 label {
@@ -44,7 +44,7 @@ label {
   display: flex;
   justify-content: center;
   gap: 1.5em;
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 .my-plants-container {
