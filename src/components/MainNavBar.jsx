@@ -33,7 +33,7 @@ export default function MainNavBar() {
           <h4>My Plants</h4>
         </div>
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="search"
         className={({ isActive }) =>
           isActive ? "nav-bar-link selected" : "nav-bar-link"
@@ -54,7 +54,7 @@ export default function MainNavBar() {
           <SettingsRoundedIcon />
           <h4>Settings</h4>
         </div>
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 }

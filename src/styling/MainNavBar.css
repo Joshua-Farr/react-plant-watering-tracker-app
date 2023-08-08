@@ -7,6 +7,10 @@
   padding-block: 0.5em;
   border-top: 1px solid #b9b9b9;
   margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .menu-item {
