@@ -18,6 +18,7 @@ export default function PlantsPage() {
         location={plant.location}
         wateredDate={plant.wateredDate}
         waterSchedule={plant.waterSchedule}
+        imgUrl={plant.imgUrl}
       />
     );
   });
@@ -25,10 +26,7 @@ export default function PlantsPage() {
   return (
     <div className="my-plants-container">
       <h1 className="page-title">My Plants</h1>
-
-      {/* <PlantDetails />
-      <PlantDetails /> */}
-      {plantElements}
+      <div className="plant-wrapper">{plantElements}</div>
       <NavLink to="/newplantinfo">
         <AddCircleRoundedIcon className="add-plant-button" />
       </NavLink>

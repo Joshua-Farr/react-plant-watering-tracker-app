@@ -1,6 +1,7 @@
 import "../../styling/NewPlantInfoPage.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { PlantContext } from "../../../src/App.jsx";
+import { plantArray } from "../../../src/PlantImages.jsx";
 import React from "react";
 
 export default function NewPlantInfoPage() {
@@ -13,6 +14,9 @@ export default function NewPlantInfoPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const plantImgIndex = Math.floor(Math.random() * plantArray.length);
+    console.log("these are the plants: ", plantArray);
+    console.log("this is the selected img: ", plantArray[plantImgIndex]);
     // const navigate = useNavigate();
     console.log(plantName, plantLocation, wateredDate, waterSchedule);
     const newPlant = {
@@ -20,6 +24,7 @@ export default function NewPlantInfoPage() {
       location: plantLocation,
       wateredDate: wateredDate,
       waterSchedule: waterSchedule,
+      imgUrl: plantArray[plantImgIndex],
     };
     console.log(newPlant);
     addPlant(newPlant);

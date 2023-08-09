@@ -31,6 +31,7 @@
   border-radius: 50%;
   color: white;
   background-color: #7da08e;
+  overflow: hidden;
 }
 
 .nav-link-homepage {
