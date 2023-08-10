@@ -1,10 +1,12 @@
 import React from "react";
 import ForestRoundedIcon from "@mui/icons-material/ForestRounded";
 import "../../styling/HomePage.css";
+import OverdueTaskCard from "../../components/OverdueTaskCard";
 export default function HomePage() {
   return (
     <>
-      <div className="reminder-card">
+      <OverdueTaskCard />
+      {/* <div className="reminder-card">
         <div className="icon-circle">
           <ForestRoundedIcon size="large" />
         </div>
@@ -13,6 +15,7 @@ export default function HomePage() {
           <h4>new tasks will show up here </h4>
         </div>
       </div>
+      ) */}
     </>
   );
 }

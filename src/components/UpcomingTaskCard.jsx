@@ -14,6 +14,10 @@ export default function UpcomingTaskCard() {
     upcomingPlantsArray = plantsData.map((singlePlant) => {
       console.log("Running...");
       let nextWater = new Date(singlePlant.wateredDate);
+      console.log(
+        "Parsed next water time: ",
+        nextWater.getDate() + parseInt(singlePlant.waterSchedule)
+      );
       nextWater.setDate(
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );
@@ -42,7 +46,9 @@ export default function UpcomingTaskCard() {
               </div>
               <div className="reminder-info-text">
                 <h3>{singlePlant.name}</h3>
-                <h4 className="reminder-info-location">Office</h4>
+                <h4 className="reminder-info-location">
+                  {singlePlant.location}
+                </h4>
               </div>
               <div className="task-bubble">
                 <WaterDropRoundedIcon size="large" />
