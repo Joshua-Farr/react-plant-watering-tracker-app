@@ -25,6 +25,7 @@ export default function NewPlantInfoPage() {
       wateredDate: wateredDate,
       waterSchedule: waterSchedule,
       imgUrl: plantArray[plantImgIndex],
+      id: React.useId(),
     };
     console.log(newPlant);
     addPlant(newPlant);

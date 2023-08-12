@@ -60,10 +60,6 @@ export default function UpcomingTaskCard() {
         );
       }
     });
-    console.log(
-      "These are the plants that need watering :",
-      upcomingPlantsArray
-    );
     return upcomingPlantsArray;
   }
 

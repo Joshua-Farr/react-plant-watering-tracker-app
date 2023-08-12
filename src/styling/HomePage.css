@@ -10,6 +10,26 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.water-reminder-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #5b5b5b;
+  padding: 1em;
+  padding-left: 2em;
+  margin: auto 2em;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.title-main {
+  color: green;
+}
+
 .reminder-info-text {
   display: flex;
   flex-direction: column;

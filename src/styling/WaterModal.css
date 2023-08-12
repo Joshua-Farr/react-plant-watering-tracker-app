@@ -1,0 +1,56 @@
+.modal-container {
+  background-color: white;
+  margin: 3.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  gap: 1.5em;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.water-yes-btn {
+  background-color: #7da08e;
+  color: white;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.water-cancel-btn {
+  background-color: white;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  border: 2px solid gray !important;
+}
+
+.water-cancel-btn,
+.water-yes-btn {
+  border-radius: 25px;
+  padding: 5px 35px;
+  border: 2px solid transparent;
+}
+
+.water-cancel-btn:hover,
+.water-yes-btn:hover,
+.water-cancel-btn:focus,
+.water-yes-btn:focus {
+  cursor: pointer;
+}
+
+.modal-wrapper {
+  /* background-color: black; */
+}
+
+.title-main {
+  text-align: center;
+  margin-inline: 1.5em;
+  margin-bottom: 0.25em;
+  color: black;
+}
