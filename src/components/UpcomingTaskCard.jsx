@@ -18,6 +18,8 @@ export default function UpcomingTaskCard() {
         "Parsed next water time: ",
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );
+
+      //updating the next
       nextWater.setDate(
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );

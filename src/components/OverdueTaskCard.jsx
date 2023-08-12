@@ -5,15 +5,31 @@ import WaterDropRoundedIcon from "@mui/icons-material/WaterDropRounded";
 
 export default function OverdueTaskCard() {
   const plantsData = React.useContext(PlantContext).plants;
-
   const [havePlants, setHavePlants] = React.useState(false);
 
-  function getThirstyPlants() {
-    let thirstyPlantsArray;
+  function getOverduePlants() {
+    console.log("running thirsty plant funciton...");
     const todaysDate = new Date();
-    thirstyPlantsArray = plantsData.map((singlePlant) => {
+
+    const upcomingPlantsArray = plantsData.map((singlePlant) => {
       let nextWater = new Date(singlePlant.wateredDate);
-      if (nextWater <= todaysDate) {
+
+      nextWater.setDate(
+        nextWater.getDate() + parseInt(singlePlant.waterSchedule)
+      );
+
+      console.log("next water for thirsty plants: ", nextWater);
+      let needs = nextWater <= todaysDate;
+      if (needs) {
+        console.log("thirstyy!");
+        let daysToWater = Math.round(
+          nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000
+        );
+
+        React.useEffect(() => {
+          if (upcomingPlantsArray) setHavePlants(true);
+        }, []);
+
         return (
           <div className="upcoming-reminder-card">
             <div className="upcoming-plant-information">
@@ -34,15 +50,14 @@ export default function OverdueTaskCard() {
         );
       }
     });
-    setHavePlants((plants) => !plants);
-    return thirstyPlantsArray;
-  }
 
+    return upcomingPlantsArray;
+  }
+  const plantElements = getOverduePlants();
   return (
     <>
-      {console.log(havePlants)}
       {havePlants ? (
-        getThirstyPlants()
+        plantElements
       ) : (
         <div className="reminder-card">
           <div className="icon-circle">
