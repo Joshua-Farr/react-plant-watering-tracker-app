@@ -6,8 +6,8 @@ import "../styling/WaterModal.css";
 
 export default function MainLayout() {
   return (
-    <div className="app-wrapper">
-      <div className="modal-wrapper">
+    <div className="modal-wrapper">
+      <div className="app-wrapper">
         <div className="background-img-wave">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path

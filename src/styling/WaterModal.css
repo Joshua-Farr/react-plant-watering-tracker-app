@@ -44,9 +44,10 @@
   cursor: pointer;
 }
 
-.modal-wrapper {
-  /* background-color: black; */
-}
+/* .modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+} */
 
 .title-main {
   text-align: center;
