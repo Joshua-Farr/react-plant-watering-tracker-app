@@ -52,7 +52,7 @@ export default function OverdueTaskCard() {
                 className="upcoming-reminder-card clickable"
                 onClick={() => {
                   console.log(`PlantId ${singlePlant.id} clicked!`);
-                  toggleModal(singlePlant.id);
+                  toggleModal(singlePlant.id, singlePlant.name);
                 }}
                 data-plantId={singlePlant.id}
               >
