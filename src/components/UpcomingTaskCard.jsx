@@ -8,29 +8,19 @@ export default function UpcomingTaskCard() {
   function getUpcomingPlants() {
     let upcomingPlantsArray;
     const todaysDate = new Date();
-    // console.log(todaysDate.toLocaleDateString());
     console.log("This is the plants data: ", plantsData);
 
     upcomingPlantsArray = plantsData.map((singlePlant) => {
-      console.log("Running...");
       let nextWater = new Date(singlePlant.wateredDate);
-      console.log(
-        "Parsed next water time: ",
-        nextWater.getDate() + parseInt(singlePlant.waterSchedule)
-      );
 
       //updating the next
       nextWater.setDate(
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );
-      console.log(
-        `Next water date for ${singlePlant.name}: `,
-        nextWater.toLocaleDateString()
-      );
+
       let daysToWater = Math.round(
         nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000
       );
-      console.log(daysToWater);
       if (nextWater >= todaysDate) {
         return (
           <div className="upcoming-reminder-card">
@@ -40,6 +30,7 @@ export default function UpcomingTaskCard() {
                 ${daysToWater}
                 day${daysToWater > 1 ? "s" : ""}:`}
               </h3>
+              {/* For future expansions of the application */}
               {/* <h4 className="tasks-remaining">1 task</h4> */}
             </div>
             <div className="upcoming-plant-information">

@@ -2,6 +2,7 @@ import "../../styling/NewPlantInfoPage.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { PlantContext } from "../../../src/App.jsx";
 import { plantArray } from "../../../src/PlantImages.jsx";
+import { nanoid } from "nanoid";
 import React from "react";
 
 export default function NewPlantInfoPage() {
@@ -25,7 +26,7 @@ export default function NewPlantInfoPage() {
       wateredDate: wateredDate,
       waterSchedule: waterSchedule,
       imgUrl: plantArray[plantImgIndex],
-      id: 1,
+      id: nanoid(),
     };
     console.log(newPlant);
     addPlant(newPlant);

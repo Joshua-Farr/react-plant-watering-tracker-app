@@ -11,21 +11,21 @@ export default function OverdueTaskCard() {
   const [showModal, setShowModal] = React.useState(false);
 
   //Checking to ensure that state is working correctly...
-  React.useEffect(() => {
-    console.log("This is the state of the modal: ", showModal);
-  }, [showModal]);
+  // React.useEffect(() => {
+  //   console.log("This is the state of the modal: ", showModal);
+  // }, [showModal]);
 
   function toggleModal() {
     setShowModal((theState) => !theState);
     console.log();
   }
 
-  function waterPlant(plantId) {
-    console.log("This is the plant!", plantId);
+  function waterPlant() {
+    console.log("Watering the plant!");
+    setShowModal((theState) => !theState);
   }
 
   function getOverduePlants() {
-    console.log("running thirsty plant funciton...");
     const todaysDate = new Date();
 
     const upcomingPlantsArray = plantsData.map((singlePlant) => {
@@ -35,10 +35,8 @@ export default function OverdueTaskCard() {
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );
 
-      console.log("next water for thirsty plants: ", nextWater);
       let needs = nextWater <= todaysDate;
       if (needs) {
-        console.log("thirstyy!");
         let daysToWater = Math.round(
           nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000
         );
@@ -49,30 +47,35 @@ export default function OverdueTaskCard() {
 
         return (
           <>
-            {showModal && <WaterModal toggle={toggleModal} />}
-            <h1 className="title-main">These Plants Need Water:</h1>
-            <div
-              className="upcoming-reminder-card clickable"
-              onClick={() => {
-                console.log("button clicked!");
-                toggleModal();
-              }}
-            >
-              <div className="upcoming-plant-information">
-                <div className="icon-circle">
-                  <img src={singlePlant.imgUrl} alt="" />
+            {showModal && havePlants ? (
+              <WaterModal toggle={toggleModal} waterPlant={waterPlant} />
+            ) : (
+              <>
+                <div
+                  className="upcoming-reminder-card clickable"
+                  onClick={() => {
+                    console.log(`PlantId ${singlePlant.id} clicked!`);
+                    toggleModal(singlePlant.id);
+                  }}
+                  data-plantId={singlePlant.id}
+                >
+                  <div className="upcoming-plant-information">
+                    <div className="icon-circle">
+                      <img src={singlePlant.imgUrl} alt="" />
+                    </div>
+                    <div className="reminder-info-text">
+                      <h3>{`${singlePlant.name}`}</h3>
+                      <h4 className="reminder-info-location">
+                        {singlePlant.location}
+                      </h4>
+                    </div>
+                    <div className="task-bubble">
+                      <WaterDropRoundedIcon size="large" />
+                    </div>
+                  </div>
                 </div>
-                <div className="reminder-info-text">
-                  <h3>{`${singlePlant.name}`}</h3>
-                  <h4 className="reminder-info-location">
-                    {singlePlant.location}
-                  </h4>
-                </div>
-                <div className="task-bubble">
-                  <WaterDropRoundedIcon size="large" />
-                </div>
-              </div>
-            </div>
+              </>
+            )}
           </>
         );
       }
@@ -84,7 +87,10 @@ export default function OverdueTaskCard() {
   return (
     <div className="modal-overlay">
       {havePlants ? (
-        plantElements
+        <>
+          <h1 className="title-main">These Plants Need Water:</h1>
+          {plantElements}
+        </>
       ) : (
         <div className="water-reminder-card">
           <div className="icon-circle">

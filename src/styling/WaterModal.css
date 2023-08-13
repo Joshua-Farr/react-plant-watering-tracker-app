@@ -51,7 +51,8 @@
 
 .title-main {
   text-align: center;
+  font-size: 24px;
   margin-inline: 1.5em;
   margin-bottom: 0.25em;
-  color: black;
+  color: black !important;
 }
