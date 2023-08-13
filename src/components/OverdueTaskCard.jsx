@@ -47,35 +47,31 @@ export default function OverdueTaskCard() {
 
         return (
           <>
-            {showModal && havePlants ? (
-              <WaterModal toggle={toggleModal} waterPlant={waterPlant} />
-            ) : (
-              <>
-                <div
-                  className="upcoming-reminder-card clickable"
-                  onClick={() => {
-                    console.log(`PlantId ${singlePlant.id} clicked!`);
-                    toggleModal(singlePlant.id);
-                  }}
-                  data-plantId={singlePlant.id}
-                >
-                  <div className="upcoming-plant-information">
-                    <div className="icon-circle">
-                      <img src={singlePlant.imgUrl} alt="" />
-                    </div>
-                    <div className="reminder-info-text">
-                      <h3>{`${singlePlant.name}`}</h3>
-                      <h4 className="reminder-info-location">
-                        {singlePlant.location}
-                      </h4>
-                    </div>
-                    <div className="task-bubble">
-                      <WaterDropRoundedIcon size="large" />
-                    </div>
+            <>
+              <div
+                className="upcoming-reminder-card clickable"
+                onClick={() => {
+                  console.log(`PlantId ${singlePlant.id} clicked!`);
+                  toggleModal(singlePlant.id);
+                }}
+                data-plantId={singlePlant.id}
+              >
+                <div className="upcoming-plant-information">
+                  <div className="icon-circle">
+                    <img src={singlePlant.imgUrl} alt="" />
+                  </div>
+                  <div className="reminder-info-text">
+                    <h3>{`${singlePlant.name}`}</h3>
+                    <h4 className="reminder-info-location">
+                      {singlePlant.location}
+                    </h4>
+                  </div>
+                  <div className="task-bubble">
+                    <WaterDropRoundedIcon size="large" />
                   </div>
                 </div>
-              </>
-            )}
+              </div>
+            </>
           </>
         );
       }
@@ -86,7 +82,9 @@ export default function OverdueTaskCard() {
   const plantElements = getOverduePlants();
   return (
     <div className="modal-overlay">
-      {havePlants ? (
+      {showModal && havePlants ? (
+        <WaterModal toggle={toggleModal} waterPlant={waterPlant} />
+      ) : !showModal && havePlants ? (
         <>
           <h1 className="title-main">These Plants Need Water:</h1>
           {plantElements}
@@ -97,8 +95,8 @@ export default function OverdueTaskCard() {
             <ForestRoundedIcon size="large" />
           </div>
           <div className="reminder-info-text">
-            <h3>All tasks completed! 🎉</h3>
-            <h4>new tasks will show up here </h4>
+            <h3>All tasks completed!</h3>
+            <h4>new plant tasks will show up here </h4>
           </div>
         </div>
       )}
