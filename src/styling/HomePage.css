@@ -12,28 +12,36 @@
 
 .water-reminder-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
+  text-align: center;
   color: #5b5b5b;
-  padding: 1em;
-  padding-left: 2em;
-  margin: auto 2em;
+  padding: 0.5em;
+  margin: auto 1em;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  /* margin-block: 1em; */
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.75em;
+  color: #7da08e;
 }
 
 .clickable:hover {
   cursor: pointer;
 }
 
-.title-main {
-  color: green;
-}
-
 .reminder-info-text {
   display: flex;
   flex-direction: column;
-  margin-left: 1em;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-block: 30px;
 }
 
 .reminder-info-text > h4 {
@@ -43,8 +51,8 @@
 }
 
 .icon-circle {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;

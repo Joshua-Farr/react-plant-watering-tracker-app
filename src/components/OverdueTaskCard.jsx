@@ -1,9 +1,10 @@
 import React from "react";
 import { PlantContext } from "../App";
-import ForestRoundedIcon from "@mui/icons-material/ForestRounded";
+import CelebrationRoundedIcon from "@mui/icons-material/CelebrationRounded";
 import WaterDropRoundedIcon from "@mui/icons-material/WaterDropRounded";
 import WaterModal from "./special_components/WaterModal";
 import "../styling/WaterModal.css";
+import Confetti from "react-confetti";
 
 export default function OverdueTaskCard() {
   const plantsData = React.useContext(PlantContext).plants;
@@ -91,12 +92,16 @@ export default function OverdueTaskCard() {
         </>
       ) : (
         <div className="water-reminder-card">
-          <div className="icon-circle">
-            <ForestRoundedIcon size="large" />
-          </div>
+          <Confetti tweenDuration={3000} />
           <div className="reminder-info-text">
+            <div className="icon-circle">
+              <CelebrationRoundedIcon size="large" />
+            </div>
             <h3>All tasks completed!</h3>
-            <h4>new plant tasks will show up here </h4>
+
+            <p className="quote">
+              "A beautiful plant is like having a friend around the house"{" "}
+            </p>
           </div>
         </div>
       )}
