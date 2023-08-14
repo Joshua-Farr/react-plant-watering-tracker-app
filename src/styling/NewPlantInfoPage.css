@@ -1,9 +1,13 @@
 .add-new-plant-form {
-  display: inline;
+  display: flex;
+  flex-direction: column;
   /* border: 1px solid #b9b9b98f; */
   /* padding: 1.5em; */
   border-radius: 10px;
   /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); */
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -62,6 +66,7 @@ input,
 select {
   display: block;
   margin-bottom: 1.5em;
+  width: 100%;
 }
 
 select,
@@ -85,5 +90,6 @@ select,
 .plant-form-img {
   border-radius: 10px;
   margin-bottom: 1.5em;
+  margin-inline: 2em;
   /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); */
 }
