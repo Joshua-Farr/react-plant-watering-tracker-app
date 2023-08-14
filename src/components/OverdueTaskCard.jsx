@@ -17,6 +17,11 @@ export default function OverdueTaskCard() {
     console.log("This is the state of the modal: ", showModal);
   }, [showConfetti]);
 
+  function toggleModal() {
+    setShowModal((theState) => !theState);
+    console.log();
+  }
+
   function waterPlant() {
     console.log("Watering the plant!");
     setShowModal((theState) => !theState);
@@ -49,7 +54,7 @@ export default function OverdueTaskCard() {
                 className="upcoming-reminder-card clickable"
                 onClick={() => {
                   console.log(`PlantId ${singlePlant.id} clicked!`);
-                  toggleModal(singlePlant.id, singlePlant.name);
+                  toggleModal(singlePlant.id);
                 }}
                 data-plantId={singlePlant.id}
               >
@@ -83,7 +88,7 @@ export default function OverdueTaskCard() {
         <WaterModal toggle={toggleModal} waterPlant={waterPlant} />
       ) : !showModal && havePlants ? (
         <>
-          <h1 className="title-main">These Plants Need Water:</h1>
+          <h1 className="these-plants-need-water">These Plants Need Water:</h1>
           {plantElements}
         </>
       ) : (
