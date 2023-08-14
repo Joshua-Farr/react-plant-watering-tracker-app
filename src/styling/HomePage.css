@@ -85,7 +85,8 @@
 }
 
 .nav-link-main:hover,
-.nav-link-main:focus {
+.nav-link-main:focus,
+.selected {
   border-radius: 75px;
   background-color: #e3ece7;
 }

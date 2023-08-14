@@ -10,16 +10,12 @@ export default function OverdueTaskCard() {
   const plantsData = React.useContext(PlantContext).plants;
   const [havePlants, setHavePlants] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
+  const [showConfetti, setShowConfetti] = React.useState(true);
 
   //Checking to ensure that state is working correctly...
-  // React.useEffect(() => {
-  //   console.log("This is the state of the modal: ", showModal);
-  // }, [showModal]);
-
-  function toggleModal() {
-    setShowModal((theState) => !theState);
-    console.log();
-  }
+  React.useEffect(() => {
+    console.log("This is the state of the modal: ", showModal);
+  }, [showConfetti]);
 
   function waterPlant() {
     console.log("Watering the plant!");
@@ -92,7 +88,7 @@ export default function OverdueTaskCard() {
         </>
       ) : (
         <div className="water-reminder-card">
-          <Confetti tweenDuration={3000} />
+          <Confetti />
           <div className="reminder-info-text">
             <div className="icon-circle">
               <CelebrationRoundedIcon size="large" />
@@ -100,7 +96,8 @@ export default function OverdueTaskCard() {
             <h3>All tasks completed!</h3>
 
             <p className="quote">
-              "A beautiful plant is like having a friend around the house"{" "}
+              "A beautiful plant is like having a friend around the house" -Beth
+              Ditto
             </p>
           </div>
         </div>

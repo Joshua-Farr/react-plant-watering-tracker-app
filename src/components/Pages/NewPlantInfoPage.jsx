@@ -12,13 +12,13 @@ export default function NewPlantInfoPage() {
   const [waterSchedule, setWaterSchedule] = React.useState();
 
   const { plants, addPlant } = React.useContext(PlantContext);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     const plantImgIndex = Math.floor(Math.random() * plantArray.length);
     console.log("these are the plants: ", plantArray);
     console.log("this is the selected img: ", plantArray[plantImgIndex]);
-    // const navigate = useNavigate();
     console.log(plantName, plantLocation, wateredDate, waterSchedule);
     const newPlant = {
       name: plantName,
@@ -31,7 +31,7 @@ export default function NewPlantInfoPage() {
     console.log(newPlant);
     addPlant(newPlant);
     console.log(plants);
-    // navigate("..", { relative: "path" });
+    navigate("../plants", { relative: "path" });
   }
 
   return (

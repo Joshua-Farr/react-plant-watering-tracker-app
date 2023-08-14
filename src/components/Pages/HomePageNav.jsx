@@ -6,10 +6,20 @@ export default function HomePageNav() {
   return (
     <div>
       <div className="nav-link-homepage">
-        <NavLink to="." className="nav-link-main">
+        <NavLink
+          to="."
+          className={({ isActive }) =>
+            isActive ? "nav-link-main selected" : "nav-link-main"
+          }
+        >
           Today
         </NavLink>
-        <NavLink to="upcoming" className="nav-link-main">
+        <NavLink
+          to="upcoming"
+          className={({ isActive }) =>
+            isActive ? "nav-link-main selected" : "nav-link-main"
+          }
+        >
           Upcoming
         </NavLink>
       </div>
