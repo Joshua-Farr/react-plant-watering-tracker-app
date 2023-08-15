@@ -11,6 +11,7 @@ export default function OverdueTaskCard() {
   const [havePlants, setHavePlants] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [showConfetti, setShowConfetti] = React.useState(true);
+  const [thirstyPlant, setThirstyPlant] = React.useState();
 
   //Checking to ensure that state is working correctly...
   React.useEffect(() => {
@@ -19,11 +20,20 @@ export default function OverdueTaskCard() {
 
   function toggleModal() {
     setShowModal((theState) => !theState);
-    console.log();
+    console.log(thirstyPlant);
   }
 
   function waterPlant() {
-    console.log("Watering the plant!");
+    const todaysDate = new Date();
+    console.log("Watering the plant!, ID:", thirstyPlant);
+
+    const newPlants = plantsData.map((plant) => {
+      if (plant.id === thirstyPlant) {
+        return { ...plant, wateredDate: todaysDate };
+      }
+    });
+    console.log(newPlants);
+    plantsData = newPlants;
     setShowModal((theState) => !theState);
   }
 
@@ -54,7 +64,8 @@ export default function OverdueTaskCard() {
                 className="upcoming-reminder-card clickable"
                 onClick={() => {
                   console.log(`PlantId ${singlePlant.id} clicked!`);
-                  toggleModal(singlePlant.id);
+                  toggleModal();
+                  setThirstyPlant(singlePlant.id);
                 }}
                 data-plantId={singlePlant.id}
               >
@@ -93,7 +104,7 @@ export default function OverdueTaskCard() {
         </>
       ) : (
         <div className="water-reminder-card">
-          <Confetti />
+          {/* <Confetti /> */}
           <div className="reminder-info-text">
             <div className="icon-circle">
               <CelebrationRoundedIcon size="large" />
