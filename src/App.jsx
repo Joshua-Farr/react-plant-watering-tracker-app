@@ -12,16 +12,29 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const PlantContext = React.createContext();
 
-export default function App() {
-  const [plants, setPlants] = React.useState([]);
+const [plants, setPlants] = React.useState([]);
 
+export default function App() {
   function addPlant(newPlant) {
     setPlants((thePlants) => [...thePlants, newPlant]);
     console.log(`Adding ${newPlant.name} to the plants data!`);
   }
 
+  function waterPlant(plantId) {
+    const todaysDate = new Date();
+    setPlants((allPlants) => {
+      allPlants.map((plant) => {
+        if (plant.id === plantId) {
+          return { ...plant, wateredDate: todaysDate };
+        } else {
+          return plant;
+        }
+      });
+    });
+  }
+
   return (
-    <PlantContext.Provider value={{ plants, addPlant }}>
+    <PlantContext.Provider value={{ plants, addPlant, waterPlant }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>

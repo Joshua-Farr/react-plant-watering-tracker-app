@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styling/WaterModal.css";
 
-export default function WaterModal({ toggle, waterPlant }) {
+export default function WaterModal({ toggle, waterThePlant }) {
   return (
     <div className="modal-container">
       <h3>Are you sure you want to water this plant?</h3>
@@ -17,7 +17,8 @@ export default function WaterModal({ toggle, waterPlant }) {
         <button
           className="water-yes-btn"
           onClick={() => {
-            waterPlant();
+            console.log("Watered!");
+            waterThePlant();
           }}
         >
           Yes

@@ -8,6 +8,8 @@ import Confetti from "react-confetti";
 
 export default function OverdueTaskCard() {
   const plantsData = React.useContext(PlantContext).plants;
+  const { waterPlant } = React.useContext(PlantContext);
+
   const [havePlants, setHavePlants] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [showConfetti, setShowConfetti] = React.useState(true);
@@ -23,18 +25,9 @@ export default function OverdueTaskCard() {
     console.log(thirstyPlant);
   }
 
-  function waterPlant() {
-    const todaysDate = new Date();
-    console.log("Watering the plant!, ID:", thirstyPlant);
-
-    const newPlants = plantsData.map((plant) => {
-      if (plant.id === thirstyPlant) {
-        return { ...plant, wateredDate: todaysDate };
-      }
-    });
-    console.log(newPlants);
-    plantsData = newPlants;
-    setShowModal((theState) => !theState);
+  function waterThisPlant() {
+    console.log("Water thirsty called!");
+    waterPlant(thirstyPlant);
   }
 
   function getOverduePlants() {
@@ -96,7 +89,7 @@ export default function OverdueTaskCard() {
   return (
     <div className="modal-overlay">
       {showModal && havePlants ? (
-        <WaterModal toggle={toggleModal} waterPlant={waterPlant} />
+        <WaterModal toggle={toggleModal} waterThePlant={waterThisPlant} />
       ) : !showModal && havePlants ? (
         <>
           <h1 className="these-plants-need-water">These Plants Need Water:</h1>
