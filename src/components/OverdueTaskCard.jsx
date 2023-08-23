@@ -26,11 +26,21 @@ export default function OverdueTaskCard() {
 
   React.useEffect(() => {
     plantElements = getOverduePlants();
-    console.log("Plant Elements: ", plantElements[0]);
-    if (plantElements.length === 0) {
-      setHavePlants(false);
-    } else setHavePlants(true);
-  }, []);
+    console.log("Plant Elements: ", plantElements);
+    console.log("Plant Elements Length: ", plantElements.length);
+
+    plantElements.forEach((plant) => {
+      if (plant) {
+        setHavePlants(true);
+      } else {
+        setHavePlants(false);
+      }
+    });
+
+    // if (plantElements.length === 0 || plantElements === false) {
+    //   setHavePlants(false);
+    // } else setHavePlants(true);
+  }, [showModal]);
 
   function toggleModal() {
     setShowModal((theState) => !theState);
@@ -69,9 +79,8 @@ export default function OverdueTaskCard() {
                   console.log(`PlantId ${singlePlant.id} selected!`);
                   setThirstyPlant(singlePlant.id);
                   toggleModal();
-                  console.log("This is the thirsty plant!!", thirstyPlant);
                 }}
-                data-plantId={singlePlant.id}
+                data-plantid={singlePlant.id}
               >
                 <div className="upcoming-plant-information">
                   <div className="icon-circle">
@@ -93,7 +102,11 @@ export default function OverdueTaskCard() {
         );
       }
     });
-    return upcomingPlantsArray;
+    if (upcomingPlantsArray) {
+      return upcomingPlantsArray;
+    } else {
+      return false;
+    }
   }
 
   return (
