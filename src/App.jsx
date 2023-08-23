@@ -21,16 +21,28 @@ export default function App() {
   }
 
   function waterPlant(plantId) {
+    console.log("Water Plants function called!");
+    console.log("Here are the plants: ", plants);
     const todaysDate = new Date();
-    setPlants((allPlants) => {
-      allPlants.map((plant) => {
+    setPlants(
+      plants.map((plant) => {
         if (plant.id === plantId) {
           return { ...plant, wateredDate: todaysDate };
         } else {
           return plant;
         }
-      });
-    });
+      })
+    );
+    // setPlants((allPlants) => {
+    //   allPlants.map((plant) => {
+    //     if (plant.id === plantId) {
+    //       return { ...plant, wateredDate: todaysDate };
+    //     } else {
+    //       return plant;
+    //     }
+    //   });
+    // });
+    // console.log(newPlantArray);
   }
 
   return (

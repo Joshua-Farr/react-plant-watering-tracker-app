@@ -7,27 +7,35 @@ import "../styling/WaterModal.css";
 import Confetti from "react-confetti";
 
 export default function OverdueTaskCard() {
+  const [thirstyPlant, setThirstyPlant] = React.useState("");
   const plantsData = React.useContext(PlantContext).plants;
   const { waterPlant } = React.useContext(PlantContext);
 
   const [havePlants, setHavePlants] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [showConfetti, setShowConfetti] = React.useState(true);
-  const [thirstyPlant, setThirstyPlant] = React.useState();
+
+  React.useEffect(() => {
+    if (plantsData.length > 0) {
+      setHavePlants(true);
+    } else {
+      setHavePlants(false);
+    }
+  }, [plantsData]);
 
   //Checking to ensure that state is working correctly...
-  React.useEffect(() => {
-    console.log("This is the state of the modal: ", showModal);
-  }, [showConfetti]);
+  // React.useEffect(() => {
+  //   console.log("This is the state of the modal: ", showModal);
+  // }, [showConfetti]);
 
   function toggleModal() {
     setShowModal((theState) => !theState);
-    console.log(thirstyPlant);
+    console.log("Heres updated plants data: ", plantsData);
   }
 
   function waterThisPlant() {
-    console.log("Water thirsty called!");
     waterPlant(thirstyPlant);
+    console.log("Watering!");
   }
 
   function getOverduePlants() {
@@ -41,14 +49,11 @@ export default function OverdueTaskCard() {
       );
 
       let needs = nextWater <= todaysDate;
+
       if (needs) {
         let daysToWater = Math.round(
           nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000
         );
-
-        React.useEffect(() => {
-          if (upcomingPlantsArray) setHavePlants(true);
-        }, []);
 
         return (
           <>
@@ -56,9 +61,10 @@ export default function OverdueTaskCard() {
               <div
                 className="upcoming-reminder-card clickable"
                 onClick={() => {
-                  console.log(`PlantId ${singlePlant.id} clicked!`);
-                  toggleModal();
+                  console.log(`PlantId ${singlePlant.id} selected!`);
                   setThirstyPlant(singlePlant.id);
+                  toggleModal();
+                  console.log("This is the thirsty plant!!", thirstyPlant);
                 }}
                 data-plantId={singlePlant.id}
               >
@@ -89,10 +95,15 @@ export default function OverdueTaskCard() {
   return (
     <div className="modal-overlay">
       {showModal && havePlants ? (
-        <WaterModal toggle={toggleModal} waterThePlant={waterThisPlant} />
+        <WaterModal
+          toggle={toggleModal}
+          waterThePlant={waterThisPlant}
+          plantId={thirstyPlant}
+        />
       ) : !showModal && havePlants ? (
         <>
           <h1 className="these-plants-need-water">These Plants Need Water:</h1>
+          {console.log("Do we have thirsty plants?", havePlants)}
           {plantElements}
         </>
       ) : (
