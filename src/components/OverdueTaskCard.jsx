@@ -88,10 +88,11 @@ export default function OverdueTaskCard() {
         );
       }
     });
-
+    // console.log(upcomingPlantsArray);
     return upcomingPlantsArray;
   }
   const plantElements = getOverduePlants();
+  console.log("Plant elements: ", typeof plantElements);
   return (
     <div className="modal-overlay">
       {showModal && havePlants ? (
