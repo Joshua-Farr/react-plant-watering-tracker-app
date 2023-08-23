@@ -15,18 +15,21 @@ export default function OverdueTaskCard() {
   const [showModal, setShowModal] = React.useState(false);
   const [showConfetti, setShowConfetti] = React.useState(true);
 
-  React.useEffect(() => {
-    if (plantsData.length > 0) {
-      setHavePlants(true);
-    } else {
-      setHavePlants(false);
-    }
-  }, [plantsData]);
+  let plantElements;
 
   //Checking to ensure that state is working correctly...
   // React.useEffect(() => {
   //   console.log("This is the state of the modal: ", showModal);
   // }, [showConfetti]);
+
+  React.useEffect(() => {
+    plantElements = getOverduePlants();
+    if (plantElements) {
+      setHavePlants(true);
+    } else {
+      setHavePlants(false);
+    }
+  }, [showModal]);
 
   function toggleModal() {
     setShowModal((theState) => !theState);
@@ -42,6 +45,7 @@ export default function OverdueTaskCard() {
     const todaysDate = new Date();
 
     const upcomingPlantsArray = plantsData.map((singlePlant) => {
+      console.log("Mapping: ", singlePlant);
       let nextWater = new Date(singlePlant.wateredDate);
 
       nextWater.setDate(
@@ -49,7 +53,7 @@ export default function OverdueTaskCard() {
       );
 
       let needs = nextWater <= todaysDate;
-
+      console.log("Needs to be watered? ", needs);
       if (needs) {
         let daysToWater = Math.round(
           nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000
@@ -88,11 +92,9 @@ export default function OverdueTaskCard() {
         );
       }
     });
-    // console.log(upcomingPlantsArray);
     return upcomingPlantsArray;
   }
-  const plantElements = getOverduePlants();
-  console.log("Plant elements: ", typeof plantElements);
+
   return (
     <div className="modal-overlay">
       {showModal && havePlants ? (
