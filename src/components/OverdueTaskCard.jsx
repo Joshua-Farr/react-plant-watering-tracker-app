@@ -15,21 +15,22 @@ export default function OverdueTaskCard() {
   const [showModal, setShowModal] = React.useState(false);
   const [showConfetti, setShowConfetti] = React.useState(true);
 
-  let plantElements;
+  let plantElements = getOverduePlants();
 
-  //Checking to ensure that state is working correctly...
+  console.log("Do we have thirsty plants?", havePlants);
+
+  //Showing Confetting when completed all tasks
   // React.useEffect(() => {
   //   console.log("This is the state of the modal: ", showModal);
   // }, [showConfetti]);
 
   React.useEffect(() => {
     plantElements = getOverduePlants();
-    if (plantElements) {
-      setHavePlants(true);
-    } else {
+    console.log("Plant Elements: ", plantElements[0]);
+    if (plantElements.length === 0) {
       setHavePlants(false);
-    }
-  }, [showModal]);
+    } else setHavePlants(true);
+  }, []);
 
   function toggleModal() {
     setShowModal((theState) => !theState);
@@ -106,7 +107,6 @@ export default function OverdueTaskCard() {
       ) : !showModal && havePlants ? (
         <>
           <h1 className="these-plants-need-water">These Plants Need Water:</h1>
-          {console.log("Do we have thirsty plants?", havePlants)}
           {plantElements}
         </>
       ) : (
