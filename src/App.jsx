@@ -12,10 +12,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const PlantContext = React.createContext();
 
-const [plants, setPlants] = React.useState([]);
-
 export default function App() {
-  
+  const [plants, setPlants] = React.useState([]);
+
   function addPlant(newPlant) {
     setPlants((thePlants) => [...thePlants, newPlant]);
     console.log(`Adding ${newPlant.name} to the plants data!`);
