@@ -19,27 +19,17 @@ export default function OverdueTaskCard() {
 
   console.log("Do we have thirsty plants?", havePlants);
 
-  //Showing Confetting when completed all tasks
-  // React.useEffect(() => {
-  //   console.log("This is the state of the modal: ", showModal);
-  // }, [showConfetti]);
-
   React.useEffect(() => {
     plantElements = getOverduePlants();
-    console.log("Plant Elements: ", plantElements);
-    console.log("Plant Elements Length: ", plantElements.length);
 
     plantElements.forEach((plant) => {
       if (plant) {
         setHavePlants(true);
       } else {
         setHavePlants(false);
+        setShowConfetti(true);
       }
     });
-
-    // if (plantElements.length === 0 || plantElements === false) {
-    //   setHavePlants(false);
-    // } else setHavePlants(true);
   }, [showModal]);
 
   function toggleModal() {
@@ -124,9 +114,9 @@ export default function OverdueTaskCard() {
         </>
       ) : (
         <div className="water-reminder-card">
-          {/* <Confetti /> */}
-          <div className="reminder-info-text">
-            <div className="icon-circle">
+          {/* <Confetti className="confetti"/> */}
+          <div className="reminder-info-text-card">
+            <div className="icon-circle-celebrate">
               <CelebrationRoundedIcon size="large" />
             </div>
             <h3>All tasks completed!</h3>

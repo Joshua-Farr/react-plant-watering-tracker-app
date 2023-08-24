@@ -1,7 +1,5 @@
 import React from "react";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
-import WaterDropRoundedIcon from "@mui/icons-material/WaterDropRounded";
 import PlantDetails from "../PlantDetails";
 import { NavLink } from "react-router-dom";
 import { PlantContext } from "../../App";
@@ -9,16 +7,20 @@ import "../../styling/PlantsPage.css";
 
 export default function PlantsPage() {
   const { plants } = React.useContext(PlantContext);
-  console.log(plants);
+  console.log("These are the plants in the system: ", plants);
+
+  const { removePlant } = React.useContext(PlantContext);
 
   const plantElements = plants.map((plant) => {
     return (
       <PlantDetails
         name={plant.name}
+        id={plant.id}
         location={plant.location}
         wateredDate={plant.wateredDate}
         waterSchedule={plant.waterSchedule}
         imgUrl={plant.imgUrl}
+        removePlant={removePlant}
       />
     );
   });

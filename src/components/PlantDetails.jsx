@@ -9,6 +9,8 @@ export default function PlantDetails({
   wateredDate = "2023-07-31",
   imgUrl = "https://images.pexels.com/photos/5858235/pexels-photo-5858235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   waterSchedule = "7",
+  id = 12,
+  removePlant,
 }) {
   return (
     <div className="plant-container">
@@ -21,7 +23,12 @@ export default function PlantDetails({
           {wateredDate}
         </span>
       </div>
-      <RemoveCircleRoundedIcon className="delete-button" />
+      <RemoveCircleRoundedIcon
+        className="delete-button"
+        onClick={() => {
+          removePlant(id);
+        }}
+      />
     </div>
   );
 }

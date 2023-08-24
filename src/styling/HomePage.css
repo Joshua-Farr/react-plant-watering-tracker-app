@@ -35,6 +35,16 @@
   cursor: pointer;
 }
 
+.reminder-info-text-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-block: 30px;
+  text-align: center;
+}
+
 .reminder-info-text {
   display: flex;
   flex-direction: column;
@@ -51,12 +61,24 @@
 }
 
 .icon-circle {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background-color: #7da08e;
+  overflow: hidden;
+}
+
+.icon-circle-celebrate {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   background-color: #7da08e;
   overflow: hidden;

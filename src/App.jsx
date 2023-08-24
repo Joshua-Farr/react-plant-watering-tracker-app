@@ -24,29 +24,40 @@ export default function App() {
     console.log("Water Plants function called!");
     console.log("Here are the plants: ", plants);
     const todaysDate = new Date();
+
+    const month = todaysDate.getMonth() + 1;
+    const day = todaysDate.getDate();
+    const year = todaysDate.getFullYear();
+
+    const formattedDate = `${year}-${month}-${day}`;
+
     setPlants(
       plants.map((plant) => {
         if (plant.id === plantId) {
-          return { ...plant, wateredDate: todaysDate };
+          return { ...plant, wateredDate: formattedDate.toString() };
         } else {
           return plant;
         }
       })
     );
-    // setPlants((allPlants) => {
-    //   allPlants.map((plant) => {
-    //     if (plant.id === plantId) {
-    //       return { ...plant, wateredDate: todaysDate };
-    //     } else {
-    //       return plant;
-    //     }
-    //   });
-    // });
-    // console.log(newPlantArray);
+  }
+
+  function removePlant(plantId) {
+    setPlants(
+      plants.map((plant) => {
+        if (plant.id === plantId) {
+          return;
+        } else {
+          return plant;
+        }
+      })
+    );
   }
 
   return (
-    <PlantContext.Provider value={{ plants, addPlant, waterPlant }}>
+    <PlantContext.Provider
+      value={{ plants, addPlant, waterPlant, removePlant }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>

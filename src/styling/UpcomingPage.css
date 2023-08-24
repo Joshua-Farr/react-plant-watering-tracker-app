@@ -14,7 +14,6 @@
   display: flex;
   align-items: center;
   gap: 3px;
-  margin-top: 0.85em;
 }
 
 .task-bubble {
@@ -60,6 +59,15 @@
 .reminder-info-location {
   font-weight: 900;
   font-size: 500px;
+}
+
+.reminder-info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: none;
+  margin-left: 1em;
+  margin-block: 10px;
 }
 
 .upcoming-wrapper {
