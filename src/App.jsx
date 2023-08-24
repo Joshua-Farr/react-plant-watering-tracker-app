@@ -6,7 +6,6 @@ import SettingsPage from "./components/Pages/SettingsPage";
 import SearchPage from "./components/Pages/SearchPage";
 import HomePageNav from "./components/Pages/HomePageNav";
 import UpcomingPage from "./components/Pages/UpcomingPage";
-import AddNewPlant from "./components/Pages/AddNewPlant";
 import NewPlantInfoPage from "./components/Pages/NewPlantInfoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -43,15 +42,17 @@ export default function App() {
   }
 
   function removePlant(plantId) {
-    setPlants(
-      plants.map((plant) => {
-        if (plant.id === plantId) {
-          return;
-        } else {
-          return plant;
-        }
-      })
-    );
+    console.log("Removing Plant: ", plantId);
+
+    let newPlants = [];
+
+    plants.map((plant) => {
+      if (plant.id !== plantId) {
+        newPlants.push(plant);
+      }
+    });
+
+    setPlants(newPlants);
   }
 
   return (

@@ -6,10 +6,10 @@ import { nanoid } from "nanoid";
 import React from "react";
 
 export default function NewPlantInfoPage() {
-  const [plantName, setPlantName] = React.useState();
-  const [plantLocation, setPlantLocation] = React.useState();
-  const [wateredDate, setWateredDate] = React.useState();
-  const [waterSchedule, setWaterSchedule] = React.useState();
+  const [plantName, setPlantName] = React.useState("Planto");
+  const [plantLocation, setPlantLocation] = React.useState("Office");
+  const [wateredDate, setWateredDate] = React.useState("2023-08-01");
+  const [waterSchedule, setWaterSchedule] = React.useState("7");
 
   const { plants, addPlant } = React.useContext(PlantContext);
   const navigate = useNavigate();
