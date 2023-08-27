@@ -1,6 +1,7 @@
 import React from "react";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import PlantDetails from "../PlantDetails";
+import MainNavBar from "../MainNavBar";
 import { NavLink } from "react-router-dom";
 import { PlantContext } from "../../App";
 import "../../styling/PlantsPage.css";
@@ -32,6 +33,7 @@ export default function PlantsPage() {
       <NavLink to="/newplantinfo">
         <AddCircleRoundedIcon className="add-plant-button" />
       </NavLink>
+      <MainNavBar />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import MainLayout from "./components/MainLayout";
 import HomePage from "./components/Pages/HomePage";
 import PlantsPage from "./components/Pages/PlantsPage";
+import OverdueTaskCard from "./components/OverdueTaskCard";
 import SettingsPage from "./components/Pages/SettingsPage";
 import SearchPage from "./components/Pages/SearchPage";
 import HomePageNav from "./components/Pages/HomePageNav";
@@ -62,14 +63,12 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route path="home-nav" element={<HomePageNav />}>
-              <Route index element={<HomePage />}></Route>
-              <Route path="upcoming" element={<UpcomingPage />}></Route>
-            </Route>
-            <Route path="plants" element={<PlantsPage />}></Route>
-            <Route path="settings" element={<SettingsPage />}></Route>
-            <Route path="search" element={<SearchPage />}></Route>
+            {/* <Route index element={<HomePageNav />}> */}
+            <Route index element={<OverdueTaskCard />}></Route>
+            <Route path="upcoming" element={<UpcomingPage />}></Route>
+            {/* </Route> */}
           </Route>
+          <Route path="plants" element={<PlantsPage />}></Route>
           <Route path="newplantinfo" element={<NewPlantInfoPage />}></Route>
         </Routes>
       </BrowserRouter>

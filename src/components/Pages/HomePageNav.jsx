@@ -23,7 +23,6 @@ export default function HomePageNav() {
           Upcoming
         </NavLink>
       </div>
-      <Outlet />
     </div>
   );
 }
