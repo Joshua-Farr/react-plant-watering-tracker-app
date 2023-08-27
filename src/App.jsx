@@ -11,6 +11,31 @@ const PlantContext = React.createContext();
 export default function App() {
   const [plants, setPlants] = React.useState([]);
 
+  //Getting plant data from local storage
+  React.useEffect(() => {
+    const savedPlants = JSON.parse(localStorage.getItem("plantData"));
+    if (savedPlants) {
+      setPlants(savedPlants);
+    }
+  }, []);
+
+  //Saving plant data to local storage
+  React.useEffect(() => {
+    localStorage.setItem("plantData", JSON.stringify(plants));
+  }, [plants]);
+
+  // function savePlantToLocalStorage() {
+  //   console.log(">>> Saving Plants");
+  // }
+
+  // function getPlantsFromLocalStorage() {
+  //   const savedPlants = JSON.parse(localStorage.getItem("plants"));
+  //   if (savedPlants) {
+  //     setPlants(savedPlants);
+  //   }
+  //   console.log(">>> Loading Plants");
+  // }
+
   function addPlant(newPlant) {
     setPlants((thePlants) => [...thePlants, newPlant]);
     console.log(`Adding ${newPlant.name} to the plants data!`);
