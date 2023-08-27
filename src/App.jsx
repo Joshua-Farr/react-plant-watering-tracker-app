@@ -1,11 +1,7 @@
 import React from "react";
 import MainLayout from "./components/MainLayout";
-import HomePage from "./components/Pages/HomePage";
 import PlantsPage from "./components/Pages/PlantsPage";
 import OverdueTaskCard from "./components/OverdueTaskCard";
-import SettingsPage from "./components/Pages/SettingsPage";
-import SearchPage from "./components/Pages/SearchPage";
-import HomePageNav from "./components/Pages/HomePageNav";
 import UpcomingPage from "./components/Pages/UpcomingPage";
 import NewPlantInfoPage from "./components/Pages/NewPlantInfoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -63,10 +59,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            {/* <Route index element={<HomePageNav />}> */}
             <Route index element={<OverdueTaskCard />}></Route>
             <Route path="upcoming" element={<UpcomingPage />}></Route>
-            {/* </Route> */}
           </Route>
           <Route path="plants" element={<PlantsPage />}></Route>
           <Route path="newplantinfo" element={<NewPlantInfoPage />}></Route>
