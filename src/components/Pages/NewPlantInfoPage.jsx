@@ -58,7 +58,6 @@ export default function NewPlantInfoPage() {
           <label>
             Location:
             <select
-              value="location"
               onChange={(e) => {
                 setPlantLocation(e.target.value);
               }}
