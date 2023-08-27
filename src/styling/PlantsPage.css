@@ -12,8 +12,8 @@
 }
 
 .my-plants-container {
-  margin: 1em;
-  margin-top: 2em;
+  padding-top: 2em;
+  padding-inline: 1em;
 }
 
 .plant-container {
