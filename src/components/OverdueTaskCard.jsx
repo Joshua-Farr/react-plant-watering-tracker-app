@@ -17,8 +17,6 @@ export default function OverdueTaskCard() {
 
   let plantElements = getOverduePlants();
 
-  console.log("Do we have thirsty plants?", havePlants);
-
   React.useEffect(() => {
     plantElements = getOverduePlants();
 
@@ -34,19 +32,16 @@ export default function OverdueTaskCard() {
 
   function toggleModal() {
     setShowModal((theState) => !theState);
-    console.log("Heres updated plants data: ", plantsData);
   }
 
   function waterThisPlant() {
     waterPlant(thirstyPlant);
-    console.log("Watering!");
   }
 
   function getOverduePlants() {
     const todaysDate = new Date();
 
     const upcomingPlantsArray = plantsData.map((singlePlant) => {
-      console.log("Mapping: ", singlePlant);
       let nextWater = new Date(singlePlant.wateredDate);
 
       nextWater.setDate(
@@ -54,7 +49,6 @@ export default function OverdueTaskCard() {
       );
 
       let needs = nextWater <= todaysDate;
-      console.log("Needs to be watered? ", needs);
       if (needs) {
         let daysToWater = Math.round(
           nextWater.getTime() / 86400000 - todaysDate.getTime() / 86400000

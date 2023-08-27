@@ -8,12 +8,11 @@ export default function UpcomingTaskCard() {
   function getUpcomingPlants() {
     let upcomingPlantsArray;
     const todaysDate = new Date();
-    console.log("This is the plants data: ", plantsData);
 
     upcomingPlantsArray = plantsData.map((singlePlant) => {
       let nextWater = new Date(singlePlant.wateredDate);
 
-      //updating the next
+      //Updating the next water date
       nextWater.setDate(
         nextWater.getDate() + parseInt(singlePlant.waterSchedule)
       );

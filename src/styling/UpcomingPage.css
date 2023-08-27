@@ -3,17 +3,21 @@
   flex-direction: column;
   background-color: white;
   color: #5b5b5b;
-  padding: 1em 2em 1em 2em;
-  margin: auto 2em;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  margin-inline: 1em;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1em;
 }
 
 .upcoming-plant-information {
   display: flex;
   align-items: center;
   gap: 3px;
+}
+
+.upcoming-plant-information > .icon-circle > img {
+  height: 100%;
 }
 
 .task-bubble {

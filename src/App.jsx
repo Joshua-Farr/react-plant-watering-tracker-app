@@ -24,26 +24,11 @@ export default function App() {
     localStorage.setItem("plantData", JSON.stringify(plants));
   }, [plants]);
 
-  // function savePlantToLocalStorage() {
-  //   console.log(">>> Saving Plants");
-  // }
-
-  // function getPlantsFromLocalStorage() {
-  //   const savedPlants = JSON.parse(localStorage.getItem("plants"));
-  //   if (savedPlants) {
-  //     setPlants(savedPlants);
-  //   }
-  //   console.log(">>> Loading Plants");
-  // }
-
   function addPlant(newPlant) {
     setPlants((thePlants) => [...thePlants, newPlant]);
-    console.log(`Adding ${newPlant.name} to the plants data!`);
   }
 
   function waterPlant(plantId) {
-    console.log("Water Plants function called!");
-    console.log("Here are the plants: ", plants);
     const todaysDate = new Date();
 
     const month = todaysDate.getMonth() + 1;
@@ -64,8 +49,6 @@ export default function App() {
   }
 
   function removePlant(plantId) {
-    console.log("Removing Plant: ", plantId);
-
     let newPlants = [];
 
     plants.map((plant) => {
