@@ -1,8 +1,12 @@
-# React + Vite
+# React Plant Watering Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This React-based Plant Watering Tracker App helps users manage their indoor plants by tracking watering schedules. It provides a user-friendly interface for adding and deleting plants, as well as setting watering reminders.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Plant Management**: Easily add and delete plants in your collection.
+- **Watering Reminders**: Set watering schedules and receive timely reminders.
+- **User-Friendly Interface**: Intuitive design for a seamless user experience.
+- **Responsive Design**: Works well on various devices and screen sizes.
