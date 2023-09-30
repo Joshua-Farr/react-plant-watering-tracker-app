@@ -1,3 +1,5 @@
+Live Link --> https://fabulous-llama-95b080.netlify.app/
+
 # React Plant Watering Tracker App
 
 ## Overview
